@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chains | SXM - Premium Fashion Accessories</title>
+    <meta name="description" content="Browse our collection of premium chains at SXM. Elevate your style.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #000000;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: 900;
+            color: #d4af37;
+            text-decoration: none;
+            letter-spacing: 8px;
+        }
+
+        .back-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-link:hover {
+            color: #d4af37;
+        }
+
+        /* Category Header */
+        .category-header {
+            padding: 150px 20px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .category-header h1 {
+            font-size: 64px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
+
+        .category-header p {
+            font-size: 18px;
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 20px;
+            background: #000000;
+        }
+
+        .container {
+            max-width: 1400;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 2px solid #333333;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 25px 70px rgba(212, 175, 55, 0.4);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background: #222222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .product-card:hover .product-image::before {
+            left: 100%;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .product-description {
+            color: #888888;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 32px;
+            color: #d4af37;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+
+        .product-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: transparent;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .product-button:hover {
+            background: #d4af37;
+            color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #666666;
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 2px solid #d4af37;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 28px;
+                letter-spacing: 4px;
+            }
+
+            .category-header h1 {
+                font-size: 42px;
+                letter-spacing: 4px;
+            }
+
+            .category-header {
+                padding: 120px 20px 60px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">SXM</a>
+            <a href="index.html" class="back-link">Home</a>
+        </div>
+    </nav>
+
+    <!-- Category Header -->
+    <section class="category-header">
+        <div class="container">
+            <h1>Chains</h1>
+            <p>Discover our collection of premium chains. From Cuban Link to everyday neck pieces, find the perfect chain to elevate your look.</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/003.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Cuban Link Chain</h3>
+                        <p class="product-description">Classic thick-link chain in gold finish. Bold statement piece that defines streetwear luxury.</p>
+                        <p class="product-price">$43</p>
+                        <a href="https://wa.me/+2349016049846?text=Hi! I'm interested in Cuban Link Chain sold for $43."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/004.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Tennis Chain</h3>
+                        <p class="product-description">Sleek chain with crystal embellishments. Perfect for adding elegance to any outfit.</p>
+                        <p class="product-price">$22</p>
+                        <a href="https://wa.me/2349016049846?text=Hi! I'm interested in Tennis Chain sold for $22."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/005.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Rope Chain</h3>
+                        <p class="product-description">Intricately twisted design with durable construction. Timeless style that never goes out of Fashion.</p>
+                        <p class="product-price">$20</p>
+                        <a href="https://wa.me/+2349016049846?text=Hi! I'm interested in Rope Chain sold for $20."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/006.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Pendant Chain Set</h3>
+                        <p class="product-description">Chain with custom pendant included. Express your personality with symbolic designs.</p>
+                        <p class="product-price">$24</p>
+                        <a href="https://wa.me/+2349016049846?text=Hi! I'm interested in Pendant Chain Set sold for $24."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/007.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Layered Chain Set</h3>
+                        <p class="product-description">Three-piece set for perfect layering. Create dimension and depth in your style.</p>
+                        <p class="product-price">$35</p>
+                        <a href="https://wa.me/+2349016049846?text=Hi! I'm interested in Layered Chain Set sold for $35."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/008.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Box Chain</h3>
+                        <p class="product-description">Geometric square-link design in silver tone. Modern minimalist aesthetic with maximum impact.</p>
+                        <p class="product-price">$17</p>
+                        <a href="https://wa.me/+2349016049846?text=Hi! I'm interested in Box Chain sold for $17."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/009.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Figaro Chain</h3>
+                        <p class="product-description">Alternating link pattern with Italian-inspired design. Sophisticated choice for refined taste.</p>
+                        <p class="product-price">$19</p>
+                        <a href="https://wa.me/+2349016049846?text= Hi! I'm interested in Figaro Chain sold for $19."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/010.png" width="100%" height="auto%" /></div>
+                    <div class="product-info">
+                        <h3>Snake Chain</h3>
+                        <p class="product-description">Smooth flexible design that moves with you. Sleek and contemporary for everyday wear.</p>
+                        <p class="product-price">$22</p>
+                        <a href="https://wa.me/+2349016049846?text= Hi! I'm interested in the Snake Chain sold for $22."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/011.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Miami Cuban Link Chain</h3>
+                        <p class="product-description">Premium heavyweight design with iced-out finish. Ultimate luxury statement piece.</p>
+                        <p class="product-price">$50</p>
+                        <a href="https://wa.me/+234901604984?text= Hi! I'm interested in the Miami Cuban Link Chain sold for $50."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="img/chains/012.jpg" width="100%" height="auto" /></div>
+                    <div class="product-info">
+                        <h3>Cross Pendant Chain</h3>
+                        <p class="product-description">Faith-inspired design with detailed craftmanship. Meaningful accessory with timeless appeal.</p>
+                        <p class="product-price">$31</p>
+                        <a href="https://wa.me/+2349016049846?text=Hi! I'm interested in Cross Pendant Chain sold for $31."
+                            class="product-button" target="_blank">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SXM. All Rights Reserved.</p>
+        <p>PREMIUM FASHION ACCESORIES</p>
+        <p style="margin-top: 20px; font-size: 12px;">Website created by Christian Alisiobi-Yobo.</p>
+    </footer>
+</body>
+
+</html>
